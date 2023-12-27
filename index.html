@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="backgroundSoundbtn">
+      <audio id="background_audio" controls loop autoplay>
+        <source src="./Jaws-theme-song.mp3" type="audio/mpeg" />
+      </audio>
+      
+    </div>
+    <!-- --------------------------- Start page popup -->
+
+    <div class="StartGame">
+      <div class="imgStartGame"></div>
+      <div class="SGBtn"><a class="startBtn"></a></div>
+    </div>
+    <!-- --------------------------- Game Over page popup -->
+
+    <div class="gameOver">
+      <div class="img_Gameover"></div>
+      <div class="score">Score:</div>
+      <div class="restartbtn newGame">Restart</div>
+    </div>
+
+    <!-- --------------------------- Pause page popup -->
+    <div class="pauseGame">
+      <div class="img_pauseGame"></div>
+      <div class="scorePauseGame score">Score:</div>
+      <div class="restartbtn newGame">New Game</div>
+      <div class="restartbtn resume">Resume</div>
+    </div>
+    <!-- ///////////////////////////////////---------- BODY THAT HOLD THE GAME AND SOME COMPONET PART OR PAGE -->
+    <div id="container">
+      <div id="upper">
+        <!-- ------------------------------- Wave Sun And Moon Part -->
+        <div class="sun"></div>
+        <div class="moon"></div>
+        <div class="fisherMan">
+          <img src="./images/image-removebg-preview.png" alt="" />
+        </div>
+        <div class="ScoreOngoing">Score:</div>
+        <div class="Coin">
+          <p class="coinScore">0 *</p>
+          <img src="./images/fish_silver_coin.png" alt="" />
+        </div>
+        <div class="waves">
+          <div class="wave" id="wave_01"></div>
+          <div class="wave" id="wave_02"></div>
+          <div class="wave" id="wave_03"></div>
+          <div class="wave" id="wave_04"></div>
+        </div>
+      </div>
+      <!-- ------------------------------- The Actual game part -->
+
+      <canvas id="canvas1"></canvas>
+    </div>
+    <script src="jquery.js"></script>
+    <script src="./Moduel/fish.js"></script>
+    <script src="./Moduel/shark .js"></script>
+    <script src="./Moduel/obstacle.js"></script>
+    <script src="./Moduel/main.js"></script>
+  </body>
+</html>

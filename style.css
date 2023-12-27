@@ -1,0 +1,299 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: #f4d088;
+}
+
+canvas {
+  border: none;
+}
+
+#canvas1 {
+  width: 100%;
+  background: #3586ff;
+  height: 70vh;
+  z-index: 1400;
+}
+#upper {
+  height: 30vh;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+}
+#upper .waves {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#upper .waves .wave {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  height: 90px;
+  background-image: url(./images/wave.png);
+  background-size: 1000px 100px;
+}
+
+.wave#wave_01 {
+  opacity: 0.5;
+  bottom: 0;
+  z-index: 1000;
+  animation: animate 4s linear infinite;
+}
+.wave#wave_02 {
+  opacity: 1;
+  bottom: 10px;
+  z-index: 1000;
+  animation: animate2 4s linear infinite;
+}
+.wave#wave_03 {
+  opacity: 0.2;
+  bottom: 15px;
+  z-index: 998;
+  animation: animate 4s linear infinite;
+}
+.wave#wave_04 {
+  opacity: 0.7;
+  bottom: 20px;
+  z-index: 999;
+  animation: animate2 4s linear infinite;
+}
+@keyframes animate {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-position-x: 0px;
+  }
+}
+@keyframes animate2 {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
+}
+
+.sun {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  background-color: #fdb813;
+  border-radius: 50%;
+}
+
+.moon {
+  position: absolute;
+  margin: auto;
+  top: 20px;
+  right: 60px;
+  background-color: transparent;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  box-shadow: 25px 0 0 0 rgb(246, 241, 213);
+  display: none;
+}
+
+.fisherMan { 
+  position: absolute;
+  bottom: 100px;
+  left: 100%;
+  width: 300px;
+  height: 100px; 
+  z-index: 1001;
+  display: none;
+}
+.fisherMan img {
+  width: 100%;
+}
+
+
+.ScoreOngoing{
+  width: 180px;
+  height: 70px;
+  position: absolute;
+  top: 20px;
+  left: 5%;
+  border-radius: 50%;
+  font-style: oblique;
+  font-size: 30px;
+  display: none;
+}
+.Coin{
+  width: 150px;
+  height: 70px;
+  position: absolute;
+  top: 50px;
+  left: 5%;
+  border-radius: 50%;
+  font-style: oblique;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Coin img{
+  width: 70px;
+}
+
+
+.StartGame,
+.gameOver {
+  position: absolute;
+  z-index: 1500;
+  width: 400px;
+  height: 450px;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  /* box-shadow: 1px 1px 2px 2px rgb(22, 171, 221); */
+}
+
+.StartGame {
+  color: white;
+  flex-direction: column;
+}
+
+.SGBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.startBtn {
+  height: 70px;
+  width: 98%;
+  background-image: url(./images/Start-12-21-2023\(1\).gif);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+
+}
+.backgroundSoundbtn{
+  height: 30px;
+  width: 30px;
+  background-image: url(./images/volume.png);
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  z-index: 1500;
+  top: 13%;
+  right: 1%;}
+
+.imgStartGame {
+  flex: 2;
+  background-image: url(./images/pngwing.com\(7\).png);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+
+background-repeat: no-repeat;}
+
+.gameOver {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  color: white;
+  width: 350px;
+  height: 200px;
+
+}
+
+.img_Gameover {
+  flex: 2;
+  width: 98%;
+  margin: 2px;
+  background-image: url(./images/Game-Over-12-21-2023\(1\).gif);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.score {
+  flex: 1;
+  font-style: oblique;
+  font-size: 20px;
+}
+.restartbtn {
+  width: 100px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  background-color: #cb8302;
+}
+
+.restartbtn,
+.score,
+.img_Gameover {
+  margin: 2%;
+}
+
+.pauseGame {
+  color: white;
+  display: grid;
+  display:none;
+  position: absolute;
+  z-index: 1500;
+  width: 450px;
+  height: 250px;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* box-shadow: 1px 1px 2px 2px rgb(22, 171, 221); */
+  grid-template-areas: 'img_pauseGame img_pauseGame' 'score score' 'newGame resume';
+  grid-template-rows: 1fr 0.7fr 0.7fr;
+  justify-content: space-around;
+}
+
+.img_pauseGame {
+  grid-area: img_pauseGame;
+  width: 98%;
+  margin: 2px;
+  background-image: url(./images/Paused-12-21-2023.gif);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.pauseGame .score {
+  margin-top: 5%;
+  grid-area: score;
+}
+.newGame{
+  grid-area: newGame;
+}
+
+.resume{
+grid-area: resume;
+}
+
+
+.resume ,.newGame,.restartbtn ,.SGBtn ,.startBtn ,.restartbtn{
+  cursor: pointer;
+}
+
+audio {
+  display: none;
+}
